@@ -1,0 +1,961 @@
+
+import java.awt.event.KeyEvent;
+import java.util.Date;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class menumakanan extends javax.swing.JFrame {
+     
+    double Price_nasilemak = 2.0;
+    double Price_roticanai = 1.0;
+    double Price_ayampenyek = 5.0;
+    double Price_asampedas = 7.0;
+    double Price_asamboi = 2.30;
+    double Price_airkosong = 0.20;
+    double Price_airsirap = 1.10;
+    double Price_airlimau = 4.0;
+    
+    double iTax, iTotal, iSubTotal, iCost;
+    
+    double[] itemcost = new double[8];//array
+    
+    /**
+     * Creates new form menumakanan
+     */
+    public menumakanan() {
+        initComponents();
+    }
+
+   //class for GUI
+   
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        chknasilemak = new javax.swing.JCheckBox();
+        chkroticanai = new javax.swing.JCheckBox();
+        chkayampenyet = new javax.swing.JCheckBox();
+        chkasampedas = new javax.swing.JCheckBox();
+        txtnasilemak = new javax.swing.JTextField();
+        txtroticanai = new javax.swing.JTextField();
+        txtayampenyek = new javax.swing.JTextField();
+        txtasampedas = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        chkairkosong = new javax.swing.JCheckBox();
+        chkairsirap = new javax.swing.JCheckBox();
+        chkasamboi = new javax.swing.JCheckBox();
+        chkairlimau = new javax.swing.JCheckBox();
+        txtasamboi = new javax.swing.JTextField();
+        txtairkosong = new javax.swing.JTextField();
+        txtairsirap = new javax.swing.JTextField();
+        txtairlimau = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        area = new javax.swing.JTextArea();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setForeground(new java.awt.Color(0, 153, 255));
+
+        jPanel2.setBackground(new java.awt.Color(255, 0, 0));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel1.setText("GERAI MAKAN MAK JEMAH");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(263, 263, 263)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel1)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("BREAKFAST");
+
+        chknasilemak.setBackground(new java.awt.Color(102, 102, 102));
+        chknasilemak.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        chknasilemak.setText("Nasi Lemak");
+        chknasilemak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chknasilemakActionPerformed(evt);
+            }
+        });
+
+        chkroticanai.setBackground(new java.awt.Color(102, 102, 102));
+        chkroticanai.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        chkroticanai.setText("Roti Canai");
+        chkroticanai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkroticanaiActionPerformed(evt);
+            }
+        });
+
+        chkayampenyet.setBackground(new java.awt.Color(102, 102, 102));
+        chkayampenyet.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        chkayampenyet.setText("Ayam Penyek");
+        chkayampenyet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkayampenyetActionPerformed(evt);
+            }
+        });
+
+        chkasampedas.setBackground(new java.awt.Color(102, 102, 102));
+        chkasampedas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        chkasampedas.setText("Asam Pedas");
+        chkasampedas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkasampedasActionPerformed(evt);
+            }
+        });
+
+        txtnasilemak.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtnasilemak.setText("0");
+        txtnasilemak.setEnabled(false);
+        txtnasilemak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnasilemakActionPerformed(evt);
+            }
+        });
+        txtnasilemak.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnasilemakKeyTyped(evt);
+            }
+        });
+
+        txtroticanai.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtroticanai.setText("0");
+        txtroticanai.setEnabled(false);
+        txtroticanai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtroticanaiActionPerformed(evt);
+            }
+        });
+        txtroticanai.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtroticanaiKeyTyped(evt);
+            }
+        });
+
+        txtayampenyek.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtayampenyek.setText("0");
+        txtayampenyek.setEnabled(false);
+        txtayampenyek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtayampenyekActionPerformed(evt);
+            }
+        });
+        txtayampenyek.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtayampenyekKeyTyped(evt);
+            }
+        });
+
+        txtasampedas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtasampedas.setText("0");
+        txtasampedas.setEnabled(false);
+        txtasampedas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtasampedasActionPerformed(evt);
+            }
+        });
+        txtasampedas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtasampedasKeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(chknasilemak, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtnasilemak, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(chkayampenyet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(chkasampedas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(chkroticanai, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtasampedas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtayampenyek, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtroticanai, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chknasilemak)
+                    .addComponent(txtnasilemak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chkroticanai)
+                    .addComponent(txtroticanai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chkayampenyet)
+                    .addComponent(txtayampenyek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chkasampedas)
+                    .addComponent(txtasampedas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setText("DRINK");
+
+        chkairkosong.setBackground(new java.awt.Color(102, 102, 102));
+        chkairkosong.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        chkairkosong.setText("Air Kosong");
+        chkairkosong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkairkosongActionPerformed(evt);
+            }
+        });
+
+        chkairsirap.setBackground(new java.awt.Color(102, 102, 102));
+        chkairsirap.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        chkairsirap.setText("Air Sirap");
+        chkairsirap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkairsirapActionPerformed(evt);
+            }
+        });
+
+        chkasamboi.setBackground(new java.awt.Color(102, 102, 102));
+        chkasamboi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        chkasamboi.setText("Asam Boi");
+        chkasamboi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkasamboiActionPerformed(evt);
+            }
+        });
+
+        chkairlimau.setBackground(new java.awt.Color(102, 102, 102));
+        chkairlimau.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        chkairlimau.setText("Air Limau");
+        chkairlimau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkairlimauActionPerformed(evt);
+            }
+        });
+
+        txtasamboi.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtasamboi.setText("0");
+        txtasamboi.setEnabled(false);
+        txtasamboi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtasamboiActionPerformed(evt);
+            }
+        });
+        txtasamboi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtasamboiKeyTyped(evt);
+            }
+        });
+
+        txtairkosong.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtairkosong.setText("0");
+        txtairkosong.setEnabled(false);
+        txtairkosong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtairkosongActionPerformed(evt);
+            }
+        });
+        txtairkosong.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtairkosongKeyTyped(evt);
+            }
+        });
+
+        txtairsirap.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtairsirap.setText("0");
+        txtairsirap.setEnabled(false);
+        txtairsirap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtairsirapActionPerformed(evt);
+            }
+        });
+        txtairsirap.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtairsirapKeyTyped(evt);
+            }
+        });
+
+        txtairlimau.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtairlimau.setText("0");
+        txtairlimau.setEnabled(false);
+        txtairlimau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtairlimauActionPerformed(evt);
+            }
+        });
+        txtairlimau.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtairlimauKeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chkairkosong)
+                    .addComponent(chkasamboi)
+                    .addComponent(chkairsirap)
+                    .addComponent(chkairlimau))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtairsirap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                    .addComponent(txtairkosong, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtairlimau, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtasamboi, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtasamboi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkasamboi))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chkairkosong)
+                    .addComponent(txtairkosong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chkairsirap)
+                    .addComponent(txtairsirap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chkairlimau)
+                    .addComponent(txtairlimau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
+        jPanel5.setBackground(new java.awt.Color(102, 102, 102));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("PAYMENT");
+
+        jButton2.setText("RESET");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("GENERATE RECEIPT");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("EXIT");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("PRINT");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addGap(51, 51, 51))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE))
+                        .addGap(19, 19, 19))))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
+                .addComponent(jButton5)
+                .addGap(21, 21, 21)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel6.setBackground(new java.awt.Color(102, 102, 102));
+
+        area.setColumns(20);
+        area.setRows(5);
+        jScrollPane1.setViewportView(area);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    } //END OF GUI
+  
+
+    //CHECK BUTTON
+    
+    //nasilemak checkbutton
+    private void chknasilemakActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        
+        if (chknasilemak.isSelected())
+        {
+            txtnasilemak.setEnabled(true);
+            txtnasilemak.requestFocus();
+            txtnasilemak.setText("");
+        }
+        else
+        {
+            txtnasilemak.setEnabled(false);
+            txtnasilemak.setText("0");
+        }
+    }
+    
+  //roti canai checkbutton
+    private void chkroticanaiActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        
+         if (chkroticanai.isSelected())
+        {
+            txtroticanai.setEnabled(true);
+            txtroticanai.requestFocus();
+            txtroticanai.setText("");
+        }
+        else
+        {
+            txtroticanai.setEnabled(false);
+            txtroticanai.setText("0");
+        }
+    }
+    
+    //Ayam Penyek checkbutton
+    private void chkayampenyetActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        
+         if (chkayampenyet.isSelected())
+        {
+            txtayampenyek.setEnabled(true);
+            txtayampenyek.requestFocus();
+            txtayampenyek.setText("");
+        }
+        else
+        {
+            txtayampenyek.setEnabled(false);
+            txtayampenyek.setText("0");
+        }
+    }
+    
+    //asam pedas checkbutton
+    private void chkasampedasActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+       
+          if (chkasampedas.isSelected())
+        {
+            txtasampedas.setEnabled(true);
+            txtasampedas.requestFocus();
+            txtasampedas.setText("");
+        }
+        else
+        {
+            txtasampedas.setEnabled(false);
+            txtasampedas.setText("0");
+        }
+    }
+    
+    //asam boi checkbutton
+    private void chkasamboiActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+       
+         if (chkasamboi.isSelected())
+        {
+            txtasamboi.setEnabled(true);
+            txtasamboi.requestFocus();
+            txtasamboi.setText("");
+        }
+        else
+        {
+            txtasamboi.setEnabled(false);
+            txtasamboi.setText("0");
+        }
+    }
+    
+    //air kosong checkbutton
+    private void chkairkosongActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+       
+          if (chkairkosong.isSelected())
+        {
+            txtairkosong.setEnabled(true);
+            txtairkosong.requestFocus();
+            txtairkosong.setText("");
+        }
+        else
+        {
+            txtairkosong.setEnabled(false);
+            txtairkosong.setText("0");
+        }
+        
+    }
+    
+    // air sirap checkbutton
+    private void chkairsirapActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+         if (chkairsirap.isSelected())
+        {
+            txtairsirap.setEnabled(true);
+            txtairsirap.requestFocus();
+            txtairsirap.setText("");
+        }
+        else
+        {
+            txtairsirap.setEnabled(false);
+            txtairsirap.setText("0");
+        }
+    }
+    
+    // air limau checkbutton
+    private void chkairlimauActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+       
+         if (chkairlimau.isSelected())
+        {
+            txtairlimau.setEnabled(true);
+            txtairlimau.requestFocus();
+            txtairlimau.setText("");
+        }
+        else
+        {
+            txtairlimau.setEnabled(false);
+            txtairlimau.setText("0");
+        }
+    }
+
+    //TEXT BOX
+    
+    //Text Box nasi lemak
+    private void txtnasilemakActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        
+    }
+   //Text Box roticanai
+    private void txtroticanaiActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        
+    }
+   //Text Box Air limau
+    private void txtairlimauActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+      
+    }
+
+    //textbox Asamboi
+    private void txtasamboiActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+      
+    }
+
+    //Text Box ayam penyek
+    private void txtayampenyekActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        
+    }
+    
+    //Text Box Air Kosong
+    private void txtairkosongActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        
+        
+    }
+    //Text Box Air Sirap
+    private void txtairsirapActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+       
+    }
+    //Text Box Asam Pedas
+    private void txtasampedasActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+       
+    }
+    
+  //THIS CODE IS TO MAKE TEXT BOX ONLY ACCEPT NUMERIC VALUE
+    private void txtnasilemakKeyTyped(java.awt.event.KeyEvent evt)
+    {
+        
+        char iNumber = evt.getKeyChar();
+        if(!(Character.isDigit(iNumber))
+            || (iNumber == KeyEvent.VK_BACK_SPACE)
+            || (iNumber == KeyEvent.VK_DELETE)){
+        evt.consume();
+    }
+    }
+
+    private void txtroticanaiKeyTyped(java.awt.event.KeyEvent evt) 
+    {
+        
+          char iNumber = evt.getKeyChar();
+        if(!(Character.isDigit(iNumber))
+            || (iNumber == KeyEvent.VK_BACK_SPACE)
+            || (iNumber == KeyEvent.VK_DELETE)){
+        evt.consume();
+    }
+    }
+
+    private void txtayampenyekKeyTyped(java.awt.event.KeyEvent evt) 
+    {
+      
+          char iNumber = evt.getKeyChar();
+        if(!(Character.isDigit(iNumber))
+            || (iNumber == KeyEvent.VK_BACK_SPACE)
+            || (iNumber == KeyEvent.VK_DELETE)){
+        evt.consume();
+    }
+    }
+
+    private void txtasampedasKeyTyped(java.awt.event.KeyEvent evt)
+    {
+          char iNumber = evt.getKeyChar();
+        if(!(Character.isDigit(iNumber))
+            || (iNumber == KeyEvent.VK_BACK_SPACE)
+            || (iNumber == KeyEvent.VK_DELETE)){
+        evt.consume();
+    }
+    }
+
+    private void txtasamboiKeyTyped(java.awt.event.KeyEvent evt) 
+    {
+        
+          char iNumber = evt.getKeyChar();
+        if(!(Character.isDigit(iNumber))
+            || (iNumber == KeyEvent.VK_BACK_SPACE)
+            || (iNumber == KeyEvent.VK_DELETE)){
+        evt.consume();
+    }
+    }
+
+    private void txtairkosongKeyTyped(java.awt.event.KeyEvent evt) 
+    {
+       
+          char iNumber = evt.getKeyChar();
+        if(!(Character.isDigit(iNumber))
+            || (iNumber == KeyEvent.VK_BACK_SPACE)
+            || (iNumber == KeyEvent.VK_DELETE)){
+        evt.consume();
+    }
+    }
+
+    private void txtairsirapKeyTyped(java.awt.event.KeyEvent evt) 
+    {
+        
+          char iNumber = evt.getKeyChar();
+        if(!(Character.isDigit(iNumber))
+            || (iNumber == KeyEvent.VK_BACK_SPACE)
+            || (iNumber == KeyEvent.VK_DELETE)){
+        evt.consume();
+    }
+    }
+
+    private void txtairlimauKeyTyped(java.awt.event.KeyEvent evt) 
+    {
+        
+          char iNumber = evt.getKeyChar();
+        if(!(Character.isDigit(iNumber))
+            || (iNumber == KeyEvent.VK_BACK_SPACE)
+            || (iNumber == KeyEvent.VK_DELETE)){
+        evt.consume();
+    }
+    }
+    
+  //BUTTON
+  //EXIT BUTTON
+    private JFrame frame;
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        
+        frame = new JFrame("EXIT");
+        if(JOptionPane.showConfirmDialog(frame,"Comfirm if you want to exit", "Mak jemah", 
+                JOptionPane.YES_NO_OPTION)== JOptionPane.YES_NO_OPTION){
+            System.exit(0);
+        }
+    }
+  //RESET BUTTON
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+       area.setText("");
+       
+       //food and drink TXT
+        txtnasilemak.setText(null);
+        txtroticanai.setText(null);
+        txtayampenyek.setText(null);
+        txtasampedas.setText(null);
+        txtasamboi.setText(null);
+        txtairkosong.setText(null);
+        txtairsirap.setText(null);
+        txtairlimau.setText(null);
+        
+        //food and drink CHK
+        chknasilemak.setSelected(false);
+        chkroticanai.setSelected(false);
+        chkayampenyet.setSelected(false);
+        chkasampedas.setSelected(false);
+        chkasamboi.setSelected(false);
+        chkairkosong.setSelected(false);
+        chkairsirap.setSelected(false);
+        chkairlimau.setSelected(false);
+       
+        
+        
+    }
+
+  
+    //GENERATE RECEIPT BUTTON
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+       
+        itemcost[0] = Double.parseDouble(txtnasilemak.getText()) * 2.0;
+        itemcost[1] = Double.parseDouble(txtroticanai.getText()) * 1.0;
+        itemcost[2] = Double.parseDouble(txtayampenyek.getText()) * 5.0;
+        itemcost[3] = Double.parseDouble(txtasampedas.getText()) * 7.0;
+        itemcost[4] = Double.parseDouble(txtasamboi.getText()) * 2.30;
+        itemcost[5] = Double.parseDouble(txtairkosong.getText()) * 0.20;
+        itemcost[6] = Double.parseDouble(txtairsirap.getText()) * 1.10;
+        itemcost[7] = Double.parseDouble(txtairlimau.getText()) * 4.40;
+        
+        iSubTotal = itemcost[0] + itemcost[1] + itemcost[2]  + itemcost[3]  
+                   + itemcost[4]  + itemcost[5]  + itemcost[6]  + itemcost[7] ;
+        iTax = 0.6;
+        String cTax = String.format("$%.2f",iTax);
+  
+        
+        String cSubTotal = String.format("$%.2f", iSubTotal);
+     
+                
+        String iAmount = String.format("$%.2f", iSubTotal + iTax);
+        
+        
+         area.setText("******************************************\n");
+         area.setText(area.getText() +"*  WELCOME TO GERAI MAK JEMAH  *\n");
+         area.setText(area.getText() +"******************************************\n");
+         
+         Date obj = new Date();
+         
+         String date = obj.toString();
+         area.setText(area.getText() +"\n"+date+"\n\n");
+         area.setText(area.getText() +"GST"+cTax+"\n");
+         area.setText(area.getText() +"SUB TOTAL"+cSubTotal+"\n");
+         area.setText(area.getText() +"TOTAL"+iAmount+"\n");
+         
+         area.setText(area.getText() +"******************************************\n");
+         area.setText(area.getText() +"*  THANKYOU *\n");
+         area.setText(area.getText() +"******************************************\n");
+    }
+   
+    //PRINT BUTTON
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        
+        try
+        {
+            area.print();
+        }
+        catch(Exception e)
+        { 
+        }
+    }
+    
+   
+    
+    // MAIN CLASS
+    public static void main(String args[]) {
+       
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(menumakanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(menumakanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(menumakanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(menumakanan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new menumakanan().setVisible(true);
+            }
+        });
+    }
+
+    //TEXT AREA
+    private javax.swing.JTextArea area;
+    //CHECKBOX
+    private javax.swing.JCheckBox chkairkosong;
+    private javax.swing.JCheckBox chkairlimau;
+    private javax.swing.JCheckBox chkairsirap;
+    private javax.swing.JCheckBox chkasamboi;
+    private javax.swing.JCheckBox chkasampedas;
+    private javax.swing.JCheckBox chkayampenyet;
+    private javax.swing.JCheckBox chknasilemak;
+    private javax.swing.JCheckBox chkroticanai;
+    //BUTTON
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    //LABEL
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    //SCROLLPANEL
+    private javax.swing.JScrollPane jScrollPane1;
+    //TEXTBOX
+    private javax.swing.JTextField txtairkosong;
+    private javax.swing.JTextField txtairlimau;
+    private javax.swing.JTextField txtairsirap;
+    private javax.swing.JTextField txtasamboi;
+    private javax.swing.JTextField txtasampedas;
+    private javax.swing.JTextField txtayampenyek;
+    private javax.swing.JTextField txtnasilemak;
+    private javax.swing.JTextField txtroticanai;
+   
+}
