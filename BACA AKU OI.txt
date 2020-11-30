@@ -1,0 +1,6 @@
+menumakanan 3.0 yang paling latest 
+//feature
+-logic dah fix 
+-ada manual
+-rearrange code
+-improve interface
