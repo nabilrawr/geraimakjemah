@@ -1,3 +1,4 @@
+
 import java.awt.event.KeyEvent;
 import java.util.Date;
 import javax.swing.JFrame;
@@ -907,7 +908,8 @@ public class menumakanan extends javax.swing.JFrame {
   //BUTTON
   //EXIT BUTTON
     private JFrame frame;
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) 
+    {
       
         frame = new JFrame("EXIT");
         if(JOptionPane.showConfirmDialog(frame,"Comfirm if you want to exit", "NEO CLUB CAFE", 
@@ -963,13 +965,13 @@ public class menumakanan extends javax.swing.JFrame {
         iSubTotal = itemcost[0] + itemcost[1] + itemcost[2]  + itemcost[3]  
                    + itemcost[4]  + itemcost[5]  + itemcost[6]  + itemcost[7] ;
         
-        String cTax = String.format("$%.2f",iTax);
+        String cTax = String.format("RM%.2f",iTax);
   
-        String cSubTotal = String.format("$%.2f", iSubTotal);
+        String cSubTotal = String.format("RM%.2f", iSubTotal);
         
-        iTax = 0.6;
+        iTax = 0.06;
         iTotal = iSubTotal + (iSubTotal * iTax);       
-        String iAmount = String.format("$%.2f", iTotal);
+        String iAmount = String.format("RM%.2f", iTotal);
         
         //receipt generate here
         
@@ -982,8 +984,8 @@ public class menumakanan extends javax.swing.JFrame {
          String date = obj.toString();
          area.setText(area.getText() +"\n"+date+"\n\n");
          area.setText(area.getText() +"GST 6% \n");
-         area.setText(area.getText() +"SUB TOTAL"+cSubTotal+"\n");
-         area.setText(area.getText() +"TOTAL"+iAmount+"\n");
+         area.setText(area.getText() +"SUB TOTAL : "+cSubTotal+"\n");
+         area.setText(area.getText() +"TOTAL : "+iAmount+"\n");
          
          area.setText(area.getText() +"******************************************\n");
          area.setText(area.getText() +"*                   THANKYOU                    *\n");
@@ -1088,4 +1090,3 @@ public class menumakanan extends javax.swing.JFrame {
     private javax.swing.JTextField txtnasilemak;
     private javax.swing.JTextField txtroticanai;
     // 
-}
