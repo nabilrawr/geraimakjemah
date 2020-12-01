@@ -612,7 +612,7 @@ public class menumakanan extends javax.swing.JFrame {
     }//GEN-LAST:event_chkroticanaiActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // calculation happen here
         itemcost[0] = Double.parseDouble(txtnasilemak.getText());
         itemcost[1] = Double.parseDouble(txtroticanai.getText());
         itemcost[2] = Double.parseDouble(txtayampenyek.getText());
@@ -624,7 +624,7 @@ public class menumakanan extends javax.swing.JFrame {
         
         iSubTotal = itemcost[0] + itemcost[1] + itemcost[2]  + itemcost[3]  
                    + itemcost[4]  + itemcost[5]  + itemcost[6]  + itemcost[7] ;
-        iTax = 0.6;
+        iTax = 0.06;
         String cTax = String.format("$%.2f",iTax);
         jlblTax.setText(cTax);
         
@@ -636,20 +636,24 @@ public class menumakanan extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void txtnasilemakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnasilemakActionPerformed
-        // TODO add your handling code here:
+    private void txtnasilemakActionPerformed(java.awt.event.ActionEvent evt)
+    {
+        
     }//GEN-LAST:event_txtnasilemakActionPerformed
 
-    private void txtroticanaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtroticanaiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtroticanaiActionPerformed
+    private void txtroticanaiActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+       
+    }
 
-    private void txtairlimauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtairlimauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtairlimauActionPerformed
+    private void txtairlimauActionPerformed(java.awt.event.ActionEvent evt)
+    {
+       
+    }
 
-    private void chkairsirapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkairsirapActionPerformed
-        // TODO add your handling code here:
+    private void chkairsirapActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+       
          if (chkairsirap.isSelected())
         {
             txtairsirap.setEnabled(true);
@@ -661,10 +665,10 @@ public class menumakanan extends javax.swing.JFrame {
             txtairsirap.setEnabled(false);
             txtairsirap.setText("0");
         }
-    }//GEN-LAST:event_chkairsirapActionPerformed
+    }
 
     private void chkairlimauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkairlimauActionPerformed
-        // TODO add your handling code here:
+       :
          if (chkairlimau.isSelected())
         {
             txtairlimau.setEnabled(true);
@@ -676,11 +680,12 @@ public class menumakanan extends javax.swing.JFrame {
             txtairlimau.setEnabled(false);
             txtairlimau.setText("0");
         }
-    }//GEN-LAST:event_chkairlimauActionPerformed
+    }
 
-    private void jlblTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlblTaxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jlblTaxActionPerformed
+    private void jlblTaxActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+      
+    }
   private JFrame frame;
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
