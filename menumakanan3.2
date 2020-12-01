@@ -1,4 +1,5 @@
 
+
 import java.awt.event.KeyEvent;
 import java.util.Date;
 import javax.swing.JFrame;
@@ -203,7 +204,7 @@ public class menumakanan extends javax.swing.JFrame {
 
         jLabel6.setText("Click check box if you want the food");
 
-        jLabel7.setText(Iinput the value after click the check box");
+        jLabel7.setText("Input the value after click the check box");
 
         jLabel9.setText("Click generate receipt for output");
 
@@ -973,8 +974,46 @@ public class menumakanan extends javax.swing.JFrame {
         iTotal = iSubTotal + (iSubTotal * iTax);       
         String iAmount = String.format("RM%.2f", iTotal);
         
-        //receipt generate here
         
+        
+        String nasilemak = ""; 
+        String roticanai = "";
+        String ayampenyek = "";
+        String asampedas = "";
+        String asamboi = "";
+        String airkosong = "";
+        String airsirap = "";
+        String airlimau = "";
+        
+           if(chknasilemak.isSelected()) { 
+        	   nasilemak = "\nNasi Lemak                 " + txtnasilemak.getText() + "         " + " RM 2.00";	
+        			} 
+           if( chkroticanai.isSelected()) {
+        	   roticanai = "\nroticanai                        " + txtroticanai.getText() + "         " + " RM 1.00";	
+        			}
+           if( chkayampenyet.isSelected()) {
+        	   ayampenyek = "\nayampenyek                 " + txtayampenyek.getText() + "         " + " RM 5.00" ;	
+        			}
+           if(chkasampedas.isSelected()) {
+        	   asampedas = "\nasampedas                  " + txtasampedas.getText() + "         " + " RM 7.00";	
+        			}
+           if(chkasamboi.isSelected()) {
+        	   asamboi = "\nasamboi                       " + txtasamboi.getText() + "         " + " RM 2.30";	
+        			}
+           if(chkairkosong.isSelected()) {
+        	   airkosong = "\nairkosong                     " + txtairkosong.getText() + "         " + " RM 0.20";	
+        			}
+           if(chkairsirap.isSelected()) {
+        	   airsirap = "\nairsirap                          " + txtairsirap.getText() + "         " + " RM 1.10";	
+        			}
+           if(chkairlimau.isSelected()) {
+        	   airlimau = "\nairlimau                         " + txtairlimau.getText() + "         " + " RM 4.40";	
+        			}
+        
+        
+       
+        //receipt generate here
+
          area.setText("******************************************\n");
          area.setText(area.getText() +"*  WELCOME TO NEO CLUB CAFE  *\n");
          area.setText(area.getText() +"******************************************\n");
@@ -983,7 +1022,18 @@ public class menumakanan extends javax.swing.JFrame {
          
          String date = obj.toString();
          area.setText(area.getText() +"\n"+date+"\n\n");
-         area.setText(area.getText() +"GST 6% \n");
+         
+         area.setText(area.getText() 
+                 +nasilemak
+                 +roticanai
+                 +ayampenyek
+                 +asampedas
+                 +asamboi
+                 +airkosong
+                 +airsirap
+                 +airlimau+"\n");
+         
+         area.setText(area.getText() +"\n"+"GST 6% \n");
          area.setText(area.getText() +"SUB TOTAL : "+cSubTotal+"\n");
          area.setText(area.getText() +"TOTAL : "+iAmount+"\n");
          
@@ -1090,3 +1140,4 @@ public class menumakanan extends javax.swing.JFrame {
     private javax.swing.JTextField txtnasilemak;
     private javax.swing.JTextField txtroticanai;
     // 
+}
