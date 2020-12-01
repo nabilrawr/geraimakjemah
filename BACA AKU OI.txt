@@ -4,3 +4,4 @@ menumakanan 3.2 yang paling latest
 -ada manual
 -even batter code arrangement + comment
 -improve interface
+-improve receipt
