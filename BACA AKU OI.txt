@@ -1,12 +1,3 @@
 menumakanan 3.2 yang paling latest 
-//feature
--logic dah fix 
--ada manual
--even better code arrangement + comment
--improve interface
--improve receipt
-
-//will do 40/60
--menu button
--menu pop up
--change color
+NEW UPDATE
+-exception error have been added
