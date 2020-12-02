@@ -953,7 +953,8 @@ public class menumakanan extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) 
     {
         //calculation happen here
-    	
+    	try {
+    		
         itemcost[0] = Double.parseDouble(txtnasilemak.getText()) * 2.0;
         itemcost[1] = Double.parseDouble(txtroticanai.getText()) * 1.0;
         itemcost[2] = Double.parseDouble(txtayampenyek.getText()) * 5.0;
@@ -966,8 +967,8 @@ public class menumakanan extends javax.swing.JFrame {
         iSubTotal = itemcost[0] + itemcost[1] + itemcost[2]  + itemcost[3]  
                    + itemcost[4]  + itemcost[5]  + itemcost[6]  + itemcost[7] ;
         
-        String cTax = String.format("RM%.2f",iTax);
-  
+       
+        
         String cSubTotal = String.format("RM%.2f", iSubTotal);
         
         iTax = 0.06;
@@ -1010,7 +1011,7 @@ public class menumakanan extends javax.swing.JFrame {
         	   airlimau = "\nairlimau                         " + txtairlimau.getText() + "         " + " RM 4.40";	
         			}
         
-        
+    
        
         //receipt generate here
 
@@ -1040,6 +1041,18 @@ public class menumakanan extends javax.swing.JFrame {
          area.setText(area.getText() +"******************************************\n");
          area.setText(area.getText() +"*                   THANKYOU                    *\n");
          area.setText(area.getText() +"******************************************\n");
+         
+    	}
+    	
+    	//catch arimeticException
+    	catch (ArithmeticException e) {
+    		JOptionPane.showMessageDialog(frame,"Exception occured.","ERROR",JOptionPane.WARNING_MESSAGE);      
+    		
+    	}
+    	//general exception
+    	catch(Exception e) {
+    		JOptionPane.showMessageDialog(frame,"Exception occured please insert a value.","ERROR",JOptionPane.WARNING_MESSAGE);    
+    	}
     }
    
     //PRINT BUTTON
@@ -1050,8 +1063,13 @@ public class menumakanan extends javax.swing.JFrame {
         {
             area.print();
         }
+        //general exception
         catch(Exception e)
         { 
+        	
+        	
+        	JOptionPane.showMessageDialog(frame,"Exception occured.","ERROR",JOptionPane.WARNING_MESSAGE);      
+              
         }
     }
  
