@@ -3,7 +3,7 @@ import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-
+//class for GUI
 public class menumakanan extends javax.swing.JFrame {
      
 	// this declaration will use for calculation in Generate receipt button section
@@ -12,6 +12,62 @@ public class menumakanan extends javax.swing.JFrame {
     
     double[] itemcost = new double[8]; //array
     
+    // Variables declaration 
+    //TEXTAREA
+    private javax.swing.JTextArea area;
+    
+    //CHECKBOX
+    private javax.swing.JCheckBox chkairkosong;
+    private javax.swing.JCheckBox chkairlimau;
+    private javax.swing.JCheckBox chkairsirap;
+    private javax.swing.JCheckBox chkasamboi;
+    private javax.swing.JCheckBox chkasampedas;
+    private javax.swing.JCheckBox chkayampenyet;
+    private javax.swing.JCheckBox chknasilemak;
+    private javax.swing.JCheckBox chkroticanai;
+    
+    //BUTTON
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    
+    //LABEL
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    
+    //SCROLL PANEL
+    private javax.swing.JScrollPane jScrollPane1;
+    
+    //TEXTBOX
+    private javax.swing.JTextField txtairkosong;
+    private javax.swing.JTextField txtairlimau;
+    private javax.swing.JTextField txtairsirap;
+    private javax.swing.JTextField txtasamboi;
+    private javax.swing.JTextField txtasampedas;
+    private javax.swing.JTextField txtayampenyet;
+    private javax.swing.JTextField txtnasilemak;
+    private javax.swing.JTextField txtroticanai;
+    // 
+    
    
     // Creates new form menumakanan
    
@@ -19,7 +75,7 @@ public class menumakanan extends javax.swing.JFrame {
         initComponents();
     }
 
-    //CLASS FOR GUI
+    //function for component GUI
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -378,7 +434,7 @@ public class menumakanan extends javax.swing.JFrame {
             }
         });
         
-      //textbox air kosong with action event and key event
+      //textbox air kosong with key event
         txtairkosong.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtairkosong.setText("0");
         txtairkosong.setEnabled(false);
@@ -1038,60 +1094,4 @@ public class menumakanan extends javax.swing.JFrame {
             }
         });
     }
-
-    // Variables declaration 
-    //TEXTAREA
-    private javax.swing.JTextArea area;
-    
-    //CHECKBOX
-    private javax.swing.JCheckBox chkairkosong;
-    private javax.swing.JCheckBox chkairlimau;
-    private javax.swing.JCheckBox chkairsirap;
-    private javax.swing.JCheckBox chkasamboi;
-    private javax.swing.JCheckBox chkasampedas;
-    private javax.swing.JCheckBox chkayampenyet;
-    private javax.swing.JCheckBox chknasilemak;
-    private javax.swing.JCheckBox chkroticanai;
-    
-    //BUTTON
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    
-    //LABEL
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    
-    //SCROLL PANEL
-    private javax.swing.JScrollPane jScrollPane1;
-    
-    //TEXTBOX
-    private javax.swing.JTextField txtairkosong;
-    private javax.swing.JTextField txtairlimau;
-    private javax.swing.JTextField txtairsirap;
-    private javax.swing.JTextField txtasamboi;
-    private javax.swing.JTextField txtasampedas;
-    private javax.swing.JTextField txtayampenyet;
-    private javax.swing.JTextField txtnasilemak;
-    private javax.swing.JTextField txtroticanai;
-    // 
 }
